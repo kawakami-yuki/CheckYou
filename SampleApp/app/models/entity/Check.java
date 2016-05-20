@@ -96,4 +96,17 @@ public class Check extends Model {
     	Integer maxPage= checkModelService.getMaxPage().getOrElse(value);
     	return maxPage;
     }
+
+	public void setCreated(Date currentDate) {
+		// TODO 自動生成されたメソッド・スタブ
+		this.created = currentDate;
+		this.modified = currentDate;
+
+	}
+
+	public void setId(Long id2) {
+		// TODO 自動生成されたメソッド・スタブ
+		this.id = id2;
+
+	}
 }

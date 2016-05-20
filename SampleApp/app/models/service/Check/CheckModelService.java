@@ -24,6 +24,9 @@ public class CheckModelService implements ModelService<Check> {
     @Override
     public Option<Check> findById(Long id) {
     	 Finder<Long, Check> find = new Finder<Long, Check>(Long.class, Check.class);
+    	 if(id==null){
+    		 return OptionUtil.apply(null);
+    	 }
          return OptionUtil.apply(find.byId(id));
     }
 

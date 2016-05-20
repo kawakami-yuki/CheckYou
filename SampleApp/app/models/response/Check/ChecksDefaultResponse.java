@@ -1,6 +1,8 @@
 package models.response.Check;
 
 import models.entity.Check;
+import models.service.api.Check.CheckResponseService;
+
 import static play.libs.F.*;
 
 public class ChecksDefaultResponse {
@@ -11,14 +13,14 @@ public class ChecksDefaultResponse {
 
     public ChecksDefaultResponse(){}
 
-    // レスポンスDTOを取得
+ // レスポンスDTOを取得
     public Option<CheckResponse> response(Check response) {
-        return TODO;
+        return CheckResponseService.use().getCheckResponse(response);
     }
 
     // BadRequestを取得
     public ChecksDefaultResponse badRequest(String message) {
-        return TODO;
+        return CheckResponseService.use().getBadRequest(message);
     }
 }
 
